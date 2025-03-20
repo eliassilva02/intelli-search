@@ -18,8 +18,7 @@ class WebClient:
         self.chrome_options = ChromeOptions()
         self.chrome_options.add_argument("--disable-blink-features=AutomationControlled")
         self.chrome_options.add_argument('--disable-dev-shm-usage')
-        self.chrome_options.add_argument("window-size=1,1")
-        self.chrome_options.add_argument("window-position=0,0")
+        self.chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
 
         self.web_driver = Chrome(options=self.chrome_options)
         self.base_url: str = "https://www.google.com/search?q={descricao_produto}&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIGCAMQRRg70gEIMjA2OWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8"

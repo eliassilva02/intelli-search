@@ -6,7 +6,7 @@ from langchain_openai import ChatOpenAI
 from langgraph.graph import START, END, StateGraph
 from langgraph.types import Send
 from langgraph.checkpoint.memory import MemorySaver
-from console import Console
+from console import AgentConsole
 
 from schemas import *
 from prompts import *
@@ -98,5 +98,5 @@ builder.add_edge("final_writer", END)
 graph = builder.compile()
 
 if __name__ == "__main__":
-    console = Console(graph)
+    console = AgentConsole(graph)
     console.run()
